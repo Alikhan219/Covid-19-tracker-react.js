@@ -1,15 +1,24 @@
-import React from 'react';
-import './App.css';
-// import Cards from "./components/Cards/Cards"
-// import Charts from "./components/Chart/Chart"
-// import CountryPicker from "./components/CountryPicker/CountryPicker"
-import {Cards, Chart, CountryPicker} from "./components"
-function App() {
-  return (
-    <div className="">
-      <h1>App</h1>
-    </div>
-  );
+import React, { Component } from "react";
+import "./App.css";
+import { Cards, Chart, CountryPicker } from "./components";
+import styles from "./App.module.css";
+import { fetchData } from "./api";
+import { render } from "@testing-library/react";
+class App extends React.Component {
+  async componentDidMount() {
+    const data = await fetchData();
+    console.log(data);
+  }
+
+  render() {
+    return (
+      <div className={styles.container}>
+        <Cards />
+        <CountryPicker />
+        <Chart />
+      </div>
+    );
+  }
 }
 
 export default App;
