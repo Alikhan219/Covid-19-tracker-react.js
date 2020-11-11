@@ -1,8 +1,11 @@
 import React from "react"
-
+import {useState, useEffect} from "react"
+import {NativeSelect, FormControl} from "@material-ui/core"
 const CountryPicker=()=>{
     return(
-        <h1>CountryPicker</h1>
+        <FormControl>
+            <NativeSelect></NativeSelect>
+        </FormControl>
     )
 }
 export default CountryPicker;
