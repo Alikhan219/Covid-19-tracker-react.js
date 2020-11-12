@@ -1,4 +1,5 @@
 
+import { CallToActionSharp } from "@material-ui/icons";
 import axios from "axios";
 
 const url = "https://covid19.mathdro.id/api";
@@ -31,6 +32,16 @@ export const fetchDailyData= async ()=>{
          }))
         return modifiedData;
   } catch(error){
-
+    console.log(error)
   }
+}
+export const countries= async()=>{
+  try{
+       const respose= await axios.get(`${url}/countries`)
+       console.log(respose)
+  }catch(error){
+   console.log(error)
+  }
+
+  
 }
